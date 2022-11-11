@@ -33,38 +33,44 @@ public class TestAlumno {
 
         System.out.println("------------------");
         System.out.println("\nNumero de alumnos");
-        System.out.println(listaAlumnos.stream().count());
+        System.out.println(listaAlumnos.stream()
+                .count());
 
         System.out.println("------------------");
         System.out.println("\n Alumno con menor edad : ");
-        System.out.println(listaAlumnos.stream().min((a1,a2) -> a1.getEdad() - a2.getEdad()));
+        System.out.println(listaAlumnos.stream()
+                .min((a1,a2) -> a1.getEdad() - a2.getEdad()));
 
 
         System.out.println("------------------");
         System.out.println("\n Alumno con mayor edad :");
-        System.out.println(listaAlumnos.stream().max((a1,a2) -> a1.getEdad() - a2.getEdad()));
+        System.out.println(listaAlumnos.stream()
+                .max((a1,a2) -> a1.getEdad() - a2.getEdad()));
 
         System.out.println("------------------");
         System.out.println("\n Primer alumno : ");
-        System.out.println(listaAlumnos.stream().findFirst());
+        System.out.println(listaAlumnos.stream()
+                .findFirst());
 
         System.out.println("------------------");
         System.out.println("\n Alumnos que los nombres de los cursos : ");
-        listaAlumnos.stream().
-                filter(alumno -> alumno.getNombreCurso().endsWith("s"))
+        listaAlumnos.stream()
+                .filter(alumno -> alumno.getNombreCurso().endsWith("s"))
                 .forEach(Alumno::imprimirDatos);
 
         System.out.println("------------------");
         System.out.println("\n Alumnos que los nombres de los cursos contiene la letra a : ");
-        listaAlumnos.stream().
-                filter(alumno -> alumno.getNombreCurso().contains("a"))
+        listaAlumnos.stream()
+                .filter(alumno -> alumno.getNombreCurso().contains("a"))
                 .forEach(Alumno::imprimirDatos);
 
         System.out.println("------------------");
         System.out.println("\n Alumnos que los nombres es mayor a 8 caracteres : ");
         listaAlumnos.stream()
                 .filter(alumno -> alumno.getNombres().length()>8)
-                .forEach(System.out::println);
+                .forEach(Alumno::imprimirDatos);
+
+        //https://www.youtube.com/watch?v=U5oOdNG2XQY&ab_channel=MitoCode
     }
 }
 
