@@ -1,24 +1,20 @@
 package com.expresiones.lambda.ejercicio1.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Persona {
 
     private Integer id;
     private String name;
-    private Date birthDate;
+    private LocalDate birthDate;
 
     public Persona() {
     }
 
-    public Persona(Integer id, String name, Date birthDate) {
+    public Persona(Integer id, String name, LocalDate birthDate) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
-    }
-
-    public Persona(int id, String mito, LocalDate of) {
     }
 
     public Integer getId() {
@@ -37,11 +33,20 @@ public class Persona {
         this.name = name;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
     }
 }
